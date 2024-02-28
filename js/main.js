@@ -44,6 +44,13 @@ function handleDragOver(e) {
 function handleDrop(e) { 
 	e.preventDefault();
 	console.log('dropped something on me');
+	if (this.children.length === 0) {
+		// Move the dragged piece into the drop zone
+		console.log('Appending dragged piece');
+		this.appendChild(draggedPiece);
+	} else {
+		console.log('Drop zone already contains a puzzle piece');
+	}
 	   
 	// bug fix #1 should go here, and it's at most 3 lines of JS code
 
