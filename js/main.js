@@ -25,6 +25,18 @@ function changeBGImage() {
 	// and updating the background-image style of the puzzle board element.
 
 	// bug fix #2 should go here. it's at most 3 lines of JS code.
+	puzzlePieces.forEach((piece, index)=>{
+		if(index ===0) {
+			piece.src =`images/topLeft${this.id}.jpg`;
+} else if (index ===1) {
+	piece.src =`images/topRight${this.id}.jpg`;
+}else if (index ===2) {
+	piece.src =`images/bottomLeft${this.id}.jpg`;
+}else if (index ===3) {
+	piece.src =`images/bottomRight${this.id}.jpg`;
+}
+	});
+	
 	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
 }
 
