@@ -14,6 +14,13 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 	// store the dragged piece in a global variable
 	// because we need it in the handleDrop function
 	draggedPiece;
+	function resetGame(){
+		dropZones.forEach(zone=>{
+			while(zone.firstChild){
+				document.querySelector('.puzzle-pieces').appendChild(zone.firstChild);
+			}
+		});
+		}
 
 // step 3
 // functionality always goes in the middle -> how do we want
@@ -34,6 +41,8 @@ function changeBGImage() {
 	piece.src =`images/bottomLeft${this.id}.jpg`;
 }else if (index ===3) {
 	piece.src =`images/bottomRight${this.id}.jpg`;
+
+	resetGame();
 }
 	});
 	
