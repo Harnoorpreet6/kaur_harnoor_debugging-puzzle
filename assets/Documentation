@@ -1,0 +1,29 @@
+Analysing Problems:
+
+Problem 1
+
+ In the puzzle game I was able to drag the another piece in the dropbox over a piece that was already there and was able to drag all that four pieces at the same place. But there should only be one piece in one drop zone at a time according to the requirements.
+ Explanation:
+  By default, when you drag and drop an element onto a webpage, the browser might try to open the dropped content as a link or perform some other default action. e.preventDefault() stops this default behavior.Drop something on me shows that something has been dropped onto the drop zone.if statement checks if the drop zone (this) contains any child elements. The children property of an element returns a collection of its child elements. If this.children.length is equal to 0, it means the drop zone is empty.If the drop zone is empty, this line shows that the dragged piece is being appended to the drop zone.this.appendChild(draggedPiece);: This line appends the dragged piece (draggedPiece) to the drop zone (this). appendChild is a method that adds a node to the end of the list of children of a specified parent node.console.log('Drop zone already contains a puzzle piece');: If the drop zone already contains a puzzle piece, this line shows that the drop zone is already occupied.
+
+  Problem 2
+
+  The second bug is the problem with pieces appearing in the drop zones on reset / choosing a new puzzle.
+  Explanation:
+  piece: Represents the current puzzle piece being iterated over in the array.
+index: Represents the index of the current puzzle piece in the array.
+Inside the loop, it checks the value of index to determine which puzzle piece it is currently processing:
+If index is 0, it depicts first puzzle piece in the array.
+If index is 1, it depicts the second puzzle piece in the array.
+If index is 2, it depicts the third puzzle piece in the array.
+If index is 3, it depicts the fourth puzzle piece in the array.
+For each puzzle piece, it sets the src attribute of the image element (piece) to a specific image file path based on the value of this.id.So depending upon the value of index, it sets source of each puzzle piece element to a different image file path.
+
+ResetGame Function:
+
+ The resetGame function resets the game by moving all puzzle pieces from the drop zones back to the puzzle pieces container. It does this by iterating over each drop zone, removing its child elements (puzzle pieces) one by one, and appending them back to the puzzle pieces container. This ensures that the game is reset to its initial state, allowing the player to start again with a fresh set of puzzle pieces in the puzzle pieces container.
+
+
+
+
+
